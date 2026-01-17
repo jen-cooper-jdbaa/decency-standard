@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Decency Standard</title>
+    <meta name="description" content="Podcast episodes, videos, and commentary.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--spacing-lg) 2rem;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .media-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 2rem;
+        }
+        
+        .section-header {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            border-left: 6px solid var(--color-accent);
+            padding-left: var(--spacing-md);
+        }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .media-card {
+            background: var(--color-white);
+            border: 2px solid var(--color-bg);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .media-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .media-thumbnail {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 3rem;
+        }
+        
+        .media-content {
+            padding: var(--spacing-md);
+        }
+        
+        .media-type {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--color-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .media-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.3;
+        }
+        
+        .media-card p {
+            color: var(--color-text);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .media-link {
+            color: var(--color-secondary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .media-link:hover {
+            text-decoration: underline;
+        }
+        
+        .embed-placeholder {
+            background: var(--color-bg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            border: 2px dashed var(--color-text-light);
+            margin: var(--spacing-md) 0;
+        }
+        
+        .embed-placeholder p {
+            color: var(--color-text-light);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DECENCY<br>STANDARD</a>
+            <ul class="nav-links">
+                <li><a href="jdbaa.html">JDBAA</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">Media</h1>
+        <p class="page-description">
+            Podcasts, videos, and commentary that connects back to the thinking.
+        </p>
+    </div>
+
+    <div class="media-section">
+        <h2 class="section-header">Podcast</h2>
+        
+        <div class="embed-placeholder">
+            <p>📻 Your podcast embed will go here (Spotify, Apple Podcasts, or your hosting platform)</p>
+        </div>
+        
+        <div class="media-grid">
+            <div class="media-card">
+                <div class="media-thumbnail">🎙️</div>
+                <div class="media-content">
+                    <div class="media-type">Podcast Episode</div>
+                    <h3>Episode 1: Your First Episode Title</h3>
+                    <p>A brief description of what this episode covers. Make it compelling enough that people want to listen.</p>
+                    <a href="#" class="media-link">Listen Now →</a>
+                </div>
+            </div>
+            
+            <div class="media-card">
+                <div class="media-thumbnail">🎙️</div>
+                <div class="media-content">
+                    <div class="media-type">Podcast Episode</div>
+                    <h3>Episode 2: Another Great Conversation</h3>
+                    <p>Another episode description. Keep adding these as you publish new episodes.</p>
+                    <a href="#" class="media-link">Listen Now →</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-header">Video</h2>
+        
+        <div class="embed-placeholder">
+            <p>📺 Your YouTube embed will go here</p>
+        </div>
+        
+        <div class="media-grid">
+            <div class="media-card">
+                <div class="media-thumbnail">▶️</div>
+                <div class="media-content">
+                    <div class="media-type">Video</div>
+                    <h3>Your First Video Title</h3>
+                    <p>What's this video about? Give people a reason to watch.</p>
+                    <a href="#" class="media-link">Watch Now →</a>
+                </div>
+            </div>
+            
+            <div class="media-card">
+                <div class="media-thumbnail">▶️</div>
+                <div class="media-content">
+                    <div class="media-type">Video</div>
+                    <h3>Another Video Topic</h3>
+                    <p>Keep adding videos as you create them. This is your media hub.</p>
+                    <a href="#" class="media-link">Watch Now →</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--color-bg); padding: var(--spacing-lg); text-align: center; margin-top: var(--spacing-xl);">
+            <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: var(--spacing-sm);">
+                How to Add Your Content
+            </h3>
+            <p style="max-width: 700px; margin: 0 auto; line-height: 1.7;">
+                When you're ready to add real podcast and video content, you'll embed them using the iframe codes from your hosting platforms (Spotify, Apple Podcasts, YouTube, etc.). I'll show you exactly how to do this in the deployment guide.
+            </p>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p class="footer-logo">DECENCY STANDARD</p>
+                    <p class="footer-tagline">Building a personal canon in public</p>
+                </div>
+                <div class="footer-links">
+                    <a href="jdbaa.html">JDBAA</a>
+                    <a href="writing.html">Writing</a>
+                    <a href="media.html">Media</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Decency Standard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
