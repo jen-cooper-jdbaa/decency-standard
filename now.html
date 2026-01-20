@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now - Decency Standard</title>
+    <meta name="description" content="What I'm watching, listening to, reading, and exploring right now.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--spacing-lg) 2rem;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 400;
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            color: var(--color-acid-lime);
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .now-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 2rem;
+        }
+        
+        .now-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .now-section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 3px solid var(--color-acid-lime);
+        }
+        
+        .now-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin: 0;
+        }
+        
+        .widget-container {
+            background: var(--color-white);
+            padding: var(--spacing-md);
+            border-left: 4px solid var(--color-punch-magenta);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .widget-placeholder {
+            text-align: center;
+            color: var(--color-text-light);
+        }
+        
+        .widget-placeholder h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .widget-placeholder p {
+            line-height: 1.7;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .widget-placeholder code {
+            background: var(--color-soft-gray);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            font-family: monospace;
+        }
+        
+        .setup-instructions {
+            background: var(--color-soft-gray);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+            border-radius: 4px;
+        }
+        
+        .setup-instructions h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary);
+        }
+        
+        .setup-instructions ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .setup-instructions li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DECENCY<br>STANDARD</a>
+            <ul class="nav-links">
+                <li><a href="jdbaa.html">JDBAA</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="now.html">Now</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">What I'm Into Now</h1>
+        <p class="page-description">
+            A living collection of what I'm watching, listening to, reading, and exploring. Updated whenever something catches my attention.
+        </p>
+    </div>
+
+    <div class="now-content">
+        <!-- YouTube Section -->
+        <section class="now-section">
+            <div class="now-section-header">
+                <h2>Watching</h2>
+            </div>
+            <div class="widget-container">
+                <div class="widget-placeholder">
+                    <h3>YouTube Favorites</h3>
+                    <p>Your embedded YouTube playlist or liked videos will appear here.</p>
+                    <div class="setup-instructions">
+                        <h4>How to add your YouTube content:</h4>
+                        <ol>
+                            <li>Create a public playlist on YouTube (or use your "Liked Videos")</li>
+                            <li>Go to the playlist page</li>
+                            <li>Click "Share" → "Embed"</li>
+                            <li>Copy the <code>&lt;iframe&gt;</code> code</li>
+                            <li>Paste it here, replacing this placeholder</li>
+                        </ol>
+                        <p><strong>Example embed code structure:</strong></p>
+                        <code>&lt;iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Podcasts Section -->
+        <section class="now-section">
+            <div class="now-section-header">
+                <h2>Listening</h2>
+            </div>
+            <div class="widget-container">
+                <div class="widget-placeholder">
+                    <h3>Podcast Queue</h3>
+                    <p>Your Podlink collection or favorite podcast episodes will appear here.</p>
+                    <div class="setup-instructions">
+                        <h4>How to add your podcasts:</h4>
+                        <ol>
+                            <li>Set up your Podlink account at <a href="https://podlink.to" target="_blank" style="color: var(--color-punch-magenta);">podlink.to</a></li>
+                            <li>Add episodes you're listening to</li>
+                            <li>Get the embed code or shareable link</li>
+                            <li>Paste it here</li>
+                        </ol>
+                        <p><strong>Alternative:</strong> Manually list episodes with links to Apple Podcasts, Spotify, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pinterest Section -->
+        <section class="now-section">
+            <div class="now-section-header">
+                <h2>Pinning</h2>
+            </div>
+            <div class="widget-container">
+                <div class="widget-placeholder">
+                    <h3>Pinterest Board</h3>
+                    <p>Your curated Pinterest board will appear here.</p>
+                    <div class="setup-instructions">
+                        <h4>How to embed your Pinterest board:</h4>
+                        <ol>
+                            <li>Create a board on Pinterest for this site</li>
+                            <li>Go to the board</li>
+                            <li>Click the three dots (...)</li>
+                            <li>Select "Get board widget"</li>
+                            <li>Copy the embed code</li>
+                            <li>Paste it here</li>
+                        </ol>
+                        <p><strong>Or use Pinterest's Widget Builder:</strong> <a href="https://widgets.pinterest.com" target="_blank" style="color: var(--color-punch-magenta);">widgets.pinterest.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles/Reading Section -->
+        <section class="now-section">
+            <div class="now-section-header">
+                <h2>Reading</h2>
+            </div>
+            <div class="widget-container">
+                <div class="widget-placeholder">
+                    <h3>Article Queue</h3>
+                    <p>Articles and reads that are shaping your thinking right now.</p>
+                    <div class="setup-instructions">
+                        <h4>Best options for tracking articles:</h4>
+                        <ol>
+                            <li><strong>Raindrop.io</strong> (recommended)
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Create a public collection</li>
+                                    <li>Get the embed widget code</li>
+                                    <li>Clean, beautiful interface</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pocket</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Make your profile public</li>
+                                    <li>Share your reading list</li>
+                                </ul>
+                            </li>
+                            <li><strong>Manual list</strong>
+                                <ul style="margin-top: 0.5rem;">
+                                    <li>Just create a simple list with links</li>
+                                    <li>Update it whenever you find something good</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Focus (Optional Text Section) -->
+        <section class="now-section">
+            <div class="now-section-header">
+                <h2>Thinking About</h2>
+            </div>
+            <div style="background: var(--color-soft-gray); padding: var(--spacing-md); line-height: 1.8;">
+                <p style="font-size: 1.1rem; margin-bottom: var(--spacing-sm);">
+                    <strong>Current obsessions:</strong> What themes, questions, or ideas are you wrestling with right now? This is a free-form space to share what's capturing your attention.
+                </p>
+                <p style="color: var(--color-text-light); font-style: italic;">
+                    Example: "How do we build accountability into organizational systems without creating surveillance culture? Been thinking a lot about the difference between transparency and trust..."
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p class="footer-logo">DECENCY STANDARD</p>
+                    <p class="footer-tagline">Building a personal canon in public</p>
+                </div>
+                <div class="footer-links">
+                    <a href="jdbaa.html">JDBAA</a>
+                    <a href="writing.html">Writing</a>
+                    <a href="media.html">Media</a>
+                    <a href="now.html">Now</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Decency Standard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
