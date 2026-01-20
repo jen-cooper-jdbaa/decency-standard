@@ -1,3 +1,6 @@
+/* Import Google Fonts - MUST BE FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
 :root {
     /* Neon Editorial Color Palette with Lime */
     --color-paper: #F7F7F5;
@@ -14,13 +17,24 @@
     --color-accent: var(--color-blaze-orange);
     --color-bg: var(--color-paper);
     --color-text: var(--color-ink);
-    --color-text-light: #5a5a5f;
+    --color-text-light: rgba(11,11,15,0.62);
     --color-white: var(--color-paper);
     
     /* Typography */
     --font-display: 'Bebas Neue', sans-serif;
     --font-heading: 'Space Grotesk', -apple-system, sans-serif;
     --font-body: 'Inter', -apple-system, sans-serif;
+    
+    /* Typography Scale */
+    --fs-body: 1rem;
+    --fs-small: 0.9rem;
+    --fs-label: 0.75rem;
+    
+    --lh-body: 1.7;
+    --lh-tight: 1.1;
+    
+    --tracking-caps: 0.08em;
+    --tracking-head: -0.01em;
     
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -32,8 +46,16 @@
     --shadow-md: 0 4px 16px rgba(11,11,15,0.15);
 }
 
-/* Import Google Fonts - Bebas Neue, Space Grotesk, and Inter */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+/* Roaming Introvert page theme */
+.page-roaming {
+    --color-bg: var(--color-warm-stone);
+    --color-secondary: var(--color-punch-magenta);
+    --color-accent: var(--color-blaze-orange);
+}
+
+.page-roaming .main-nav {
+    background: var(--color-ink);
+}
 
 * {
     margin: 0;
@@ -43,10 +65,27 @@
 
 body {
     font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
     background: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.6;
     overflow-x: hidden;
+}
+
+/* Accessibility - Focus States */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-acid-lime);
+    outline-offset: 3px;
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* Navigation */
@@ -96,7 +135,7 @@ body {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: var(--tracking-caps);
     text-transform: uppercase;
     transition: color 0.3s ease;
     position: relative;
@@ -175,9 +214,9 @@ body {
     color: var(--color-acid-lime);
     line-height: 0.95;
     margin-bottom: var(--spacing-sm);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    text-shadow: 0 0 40px rgba(200,255,46,0.3);
+    text-shadow: 0 0 28px rgba(200,255,46,0.22);
 }
 
 .title-line {
@@ -210,11 +249,11 @@ body {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 400;
     color: var(--color-punch-magenta);
-    line-height: 1;
+    line-height: var(--lh-tight);
     margin-bottom: var(--spacing-md);
     animation: fadeInUp 1s ease-out 0.4s backwards;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
 }
 
 .subtitle-line {
@@ -226,7 +265,7 @@ body {
     color: rgba(247,247,245,0.9);
     max-width: 650px;
     margin-bottom: var(--spacing-md);
-    line-height: 1.7;
+    line-height: var(--lh-body);
     animation: fadeInUp 1s ease-out 0.6s backwards;
 }
 
@@ -290,12 +329,12 @@ body {
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: var(--spacing-sm);
-    letter-spacing: -0.01em;
+    letter-spacing: var(--tracking-head);
 }
 
 .intro-card p {
     color: var(--color-text);
-    line-height: 1.7;
+    line-height: var(--lh-body);
 }
 
 /* Latest Content Section */
@@ -312,7 +351,7 @@ body {
     margin-bottom: var(--spacing-lg);
     text-align: center;
     position: relative;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
     line-height: 1;
     text-transform: uppercase;
 }
@@ -347,11 +386,11 @@ body {
 
 .card-label {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: var(--fs-label);
     font-weight: 700;
     color: var(--color-blaze-orange);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--tracking-caps);
     display: block;
     margin-bottom: var(--spacing-xs);
 }
@@ -363,13 +402,13 @@ body {
     color: var(--color-primary);
     margin-bottom: var(--spacing-sm);
     line-height: 1.2;
-    letter-spacing: -0.01em;
+    letter-spacing: var(--tracking-head);
 }
 
 .content-card p {
     color: var(--color-text);
     margin-bottom: var(--spacing-sm);
-    line-height: 1.7;
+    line-height: var(--lh-body);
 }
 
 .read-more {
@@ -379,7 +418,7 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    font-size: 0.9rem;
+    font-size: var(--fs-small);
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -420,7 +459,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: var(--tracking-caps);
     font-size: 1rem;
     transition: transform 0.3s ease;
 }
@@ -475,6 +514,201 @@ body {
 
 .widget-link:hover {
     color: var(--color-punch-magenta);
+}/* Roaming Introvert Specific Styles */
+.roaming-hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: var(--spacing-lg) 2rem;
+    background: linear-gradient(135deg, var(--color-warm-stone) 0%, #E3D5CA 100%);
+    overflow: hidden;
+}
+
+.roaming-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 400;
+    color: var(--color-ink);
+    line-height: 0.95;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.roaming-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 400;
+    color: var(--color-punch-magenta);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.02em;
+}
+
+.roaming-description {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    color: var(--color-text);
+    max-width: 650px;
+    margin-bottom: var(--spacing-md);
+    line-height: var(--lh-body);
+}
+
+.roaming-cta-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-ink);
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 2px solid var(--color-ink);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+    background: var(--color-ink);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.roaming-what {
+    padding: var(--spacing-xl) 2rem;
+    background: var(--color-white);
+}
+
+.roaming-card {
+    padding: var(--spacing-md);
+    background: var(--color-warm-stone);
+    border-left: 4px solid var(--color-punch-magenta);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roaming-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.roaming-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: var(--tracking-head);
+}
+
+.roaming-card p {
+    color: var(--color-text);
+    line-height: var(--lh-body);
+}
+
+.roaming-method {
+    padding: var(--spacing-xl) 2rem;
+    background: var(--color-soft-gray);
+}
+
+.method-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.method-list {
+    list-style: none;
+    padding: 0;
+}
+
+.method-list li {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--color-text);
+    border-bottom: 1px solid rgba(11,11,15,0.1);
+}
+
+.method-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-punch-magenta);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.method-list li:last-child {
+    border-bottom: none;
+}
+
+.roaming-series {
+    padding: var(--spacing-xl) 2rem;
+    background: var(--color-white);
+}
+
+.roaming-connection {
+    padding: var(--spacing-xl) 2rem;
+    background: var(--color-ink);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.connection-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.connection-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-acid-lime);
+}
+
+.connection-content p {
+    font-size: 1.2rem;
+    line-height: var(--lh-body);
+    margin-bottom: var(--spacing-md);
+    color: rgba(247,247,245,0.9);
+}
+
+.connection-ctas {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.connection-link {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 2px solid var(--color-acid-lime);
+    transition: all 0.3s ease;
+}
+
+.connection-link:hover {
+    background: var(--color-acid-lime);
+    color: var(--color-ink);
 }
 
 /* Footer */
@@ -504,7 +738,7 @@ body {
 
 .footer-tagline {
     color: rgba(247,247,245,0.7);
-    font-size: 0.9rem;
+    font-size: var(--fs-small);
 }
 
 .footer-links {
@@ -516,10 +750,10 @@ body {
 .footer-links a {
     color: var(--color-white);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: var(--fs-small);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: var(--tracking-caps);
     transition: color 0.3s ease;
 }
 
@@ -547,9 +781,12 @@ body {
     
     .nav-links {
         gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
-    .hero {
+    .hero,
+    .roaming-hero {
         min-height: 70vh;
         padding: var(--spacing-md) 1.5rem;
     }
@@ -566,5 +803,10 @@ body {
     
     .footer-links {
         justify-content: center;
+    }
+    
+    .roaming-cta-group,
+    .connection-ctas {
+        flex-direction: column;
     }
 }
