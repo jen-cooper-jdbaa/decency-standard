@@ -3,129 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media - Decency Standard</title>
-    <meta name="description" content="Podcast episodes, videos, and commentary.">
+    <title>Just Don't Be an Asshole - Decency Standard</title>
+    <meta name="description" content="The manifesto. The ethos. The starting point.">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .page-header {
+        .manifesto-hero {
             background: var(--color-primary);
             color: var(--color-white);
-            padding: var(--spacing-lg) 2rem;
+            padding: var(--spacing-xl) 2rem;
             text-align: center;
         }
         
-        .page-title {
+        .manifesto-title {
             font-family: var(--font-display);
-            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 900;
-            margin-bottom: var(--spacing-sm);
+            color: var(--color-punch-magenta);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
         }
         
-        .page-description {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
+        .manifesto-intro {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+            line-height: 1.7;
+            color: rgba(255,255,255,0.9);
         }
         
-        .media-section {
-            max-width: 1100px;
+        .manifesto-content {
+            max-width: 800px;
             margin: 0 auto;
             padding: var(--spacing-xl) 2rem;
         }
         
-        .section-header {
+        .manifesto-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .manifesto-section h2 {
             font-family: var(--font-display);
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--color-primary);
             margin-bottom: var(--spacing-md);
-            border-left: 6px solid var(--color-accent);
+            border-left: 6px solid var(--color-secondary);
             padding-left: var(--spacing-md);
         }
         
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-xl);
+        .manifesto-section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text);
         }
         
-        .media-card {
+        .manifesto-section ul {
+            list-style: none;
+            margin: var(--spacing-md) 0;
+        }
+        
+        .manifesto-section li {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+        
+        .manifesto-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-weight: 700;
+        }
+        
+        .start-here-links {
+            background: var(--color-bg);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            border-top: 4px solid var(--color-punch-magenta);
+        }
+        
+        .start-here-links h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .link-card {
             background: var(--color-white);
-            border: 2px solid var(--color-bg);
-            overflow: hidden;
+            padding: var(--spacing-md);
+            text-align: center;
+            border-bottom: 3px solid var(--color-primary);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .media-card:hover {
+        .link-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
         
-        .media-thumbnail {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-white);
-            font-size: 3rem;
-        }
-        
-        .media-content {
-            padding: var(--spacing-md);
-        }
-        
-        .media-type {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--color-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .media-card h3 {
+        .link-card h4 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: var(--spacing-xs);
             color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
-            line-height: 1.3;
         }
         
-        .media-card p {
-            color: var(--color-text);
-            line-height: 1.6;
+        .link-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
             margin-bottom: var(--spacing-sm);
         }
         
-        .media-link {
+        .link-card a {
             color: var(--color-secondary);
             font-weight: 600;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
         }
         
-        .media-link:hover {
+        .link-card a:hover {
             text-decoration: underline;
-        }
-        
-        .embed-placeholder {
-            background: var(--color-bg);
-            padding: var(--spacing-lg);
-            text-align: center;
-            border: 2px dashed var(--color-text-light);
-            margin: var(--spacing-md) 0;
-        }
-        
-        .embed-placeholder p {
-            color: var(--color-text-light);
-            margin: 0;
         }
     </style>
 </head>
@@ -145,77 +154,64 @@
         </div>
     </nav>
 
-    <div class="page-header">
-        <h1 class="page-title">Media</h1>
-        <p class="page-description">
-            Podcasts, videos, and commentary that connects back to the thinking.
+    <div class="manifesto-hero">
+        <h1 class="manifesto-title">Just Don't Be<br>an Asshole</h1>
+        <p class="manifesto-intro">
+            The ethos. The thesis. The operating system for everything that follows. It's not complicated. But it's also not easy.
         </p>
     </div>
 
-    <div class="media-section">
-        <h2 class="section-header">Podcast</h2>
-        
-        <div class="embed-placeholder">
-            <p>Your podcast embed will go here (Spotify, Apple Podcasts, or your hosting platform)</p>
-        </div>
-        
-        <div class="media-grid">
-            <div class="media-card">
-                <div class="media-thumbnail">🎙️</div>
-                <div class="media-content">
-                    <div class="media-type">Podcast Episode</div>
-                    <h3>Episode 1: Your First Episode Title</h3>
-                    <p>A brief description of what this episode covers. Make it compelling enough that people want to listen.</p>
-                    <a href="#" class="media-link">Listen Now →</a>
-                </div>
-            </div>
-            
-            <div class="media-card">
-                <div class="media-thumbnail">🎙️</div>
-                <div class="media-content">
-                    <div class="media-type">Podcast Episode</div>
-                    <h3>Episode 2: Another Great Conversation</h3>
-                    <p>Another episode description. Keep adding these as you publish new episodes.</p>
-                    <a href="#" class="media-link">Listen Now →</a>
-                </div>
-            </div>
-        </div>
+    <div class="manifesto-content">
+        <section class="manifesto-section">
+            <h2>What This Means</h2>
+            <p>Being decent isn't about being nice all the time. It's not about avoiding conflict or pretending everything is fine when it's not. It's about:</p>
+            <ul>
+                <li>Treating people like humans, not resources</li>
+                <li>Saying what you mean without being cruel</li>
+                <li>Taking accountability when you mess up</li>
+                <li>Creating space for others to grow without tearing them down</li>
+                <li>Choosing clarity over comfort</li>
+            </ul>
+            <p>It's a framework, not a feeling. A discipline, not a disposition.</p>
+        </section>
 
-        <h2 class="section-header">Video</h2>
-        
-        <div class="embed-placeholder">
-            <p>Your YouTube embed will go here</p>
-        </div>
-        
-        <div class="media-grid">
-            <div class="media-card">
-                <div class="media-thumbnail">▶️</div>
-                <div class="media-content">
-                    <div class="media-type">Video</div>
-                    <h3>Your First Video Title</h3>
-                    <p>What's this video about? Give people a reason to watch.</p>
-                    <a href="#" class="media-link">Watch Now →</a>
-                </div>
-            </div>
-            
-            <div class="media-card">
-                <div class="media-thumbnail">▶️</div>
-                <div class="media-content">
-                    <div class="media-type">Video</div>
-                    <h3>Another Video Topic</h3>
-                    <p>Keep adding videos as you create them. This is your media hub.</p>
-                    <a href="#" class="media-link">Watch Now →</a>
-                </div>
-            </div>
-        </div>
+        <section class="manifesto-section">
+            <h2>Why It Matters</h2>
+            <p>We're drowning in leadership frameworks that sound good in meetings but break down the second real pressure hits. We've confused being busy with being effective. We've mistaken being "nice" for being kind. And we've normalized behavior that would never fly in our personal lives.</p>
+            <p>The bar is low. And it shouldn't be.</p>
+            <p>This isn't about perfection. It's about intentionality. It's about building systems and cultures where decency is the default, not the exception.</p>
+        </section>
 
-        <div style="background: var(--color-bg); padding: var(--spacing-lg); text-align: center; margin-top: var(--spacing-xl);">
-            <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: var(--spacing-sm);">
-                How to Add Your Content
-            </h3>
-            <p style="max-width: 700px; margin: 0 auto; line-height: 1.7;">
-                When you're ready to add real podcast and video content, you'll embed them using the iframe codes from your hosting platforms (Spotify, Apple Podcasts, YouTube, etc.). I'll show you exactly how to do this in the deployment guide.
-            </p>
+        <section class="manifesto-section">
+            <h2>How to Use This</h2>
+            <p>Think of this as your personal canon-in-progress. A collection of ideas, stories, and frameworks that help you navigate the messy reality of leading people, building things, and trying not to lose your mind (or soul) in the process.</p>
+            <p>This isn't prescriptive. It's descriptive. These are the lessons, patterns, and principles that work. Use what resonates. Ignore what doesn't. Share what helps.</p>
+        </section>
+
+        <div class="start-here-links">
+            <h3>Start Here</h3>
+            <div class="links-grid">
+                <div class="link-card">
+                    <h4>Read</h4>
+                    <p>Essays and frameworks on leadership and culture</p>
+                    <a href="writing.html">Explore Writing →</a>
+                </div>
+                <div class="link-card">
+                    <h4>Listen</h4>
+                    <p>Conversations and commentary in podcast form</p>
+                    <a href="media.html">Check Out Podcast →</a>
+                </div>
+                <div class="link-card">
+                    <h4>Watch</h4>
+                    <p>Visual content and deeper dives</p>
+                    <a href="media.html">View Videos →</a>
+                </div>
+                <div class="link-card">
+                    <h4>Connect</h4>
+                    <p>Get in touch or join the conversation</p>
+                    <a href="contact.html">Say Hello →</a>
+                </div>
+            </div>
         </div>
     </div>
 
