@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work With Me - Decency Standard</title>
+    <meta name="description" content="Let's collaborate. Or if you need to hire me, that's great too.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--spacing-lg) 2rem;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 400;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-acid-lime);
+            text-transform: uppercase;
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .work-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 2rem;
+        }
+        
+        .intro-section {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .intro-section p {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            max-width: 700px;
+            margin: 0 auto var(--spacing-sm);
+        }
+        
+        .background-section {
+            max-width: 700px;
+            margin: 0 auto var(--spacing-xl);
+        }
+        
+        .background-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            text-transform: uppercase;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0 var(--spacing-xl);
+        }
+        
+        .service-card {
+            background: var(--color-white);
+            padding: var(--spacing-md);
+            border-left: 4px solid var(--color-punch-magenta);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+        }
+        
+        .service-card p {
+            line-height: 1.7;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service-card li {
+            padding-left: var(--spacing-md);
+            position: relative;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-punch-magenta);
+            font-weight: 700;
+        }
+        
+        .executive-section {
+            background: var(--color-soft-gray);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .executive-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .executive-text {
+            max-width: 700px;
+            margin: 0 auto var(--spacing-md);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .experience-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .highlight-item {
+            text-align: center;
+        }
+        
+        .highlight-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-punch-magenta);
+            line-height: 1;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .highlight-label {
+            font-weight: 600;
+            color: var(--color-text);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: 0.9rem;
+        }
+        
+        .philosophy-section {
+            max-width: 700px;
+            margin: var(--spacing-xl) auto;
+            text-align: center;
+        }
+        
+        .philosophy-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+        }
+        
+        .philosophy-section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .philosophy-quote {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-punch-magenta);
+            line-height: 1.3;
+            margin: var(--spacing-lg) 0;
+            text-transform: uppercase;
+        }
+        
+        .cta-section {
+            background: var(--color-ink);
+            color: var(--color-white);
+            padding: var(--spacing-lg);
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--color-acid-lime);
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+        }
+        
+        .cta-section p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: var(--spacing-sm);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-tagline {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-top: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--spacing-md);
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: var(--color-acid-lime);
+            color: var(--color-ink);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-primary:hover {
+            background: var(--color-punch-magenta);
+            color: var(--color-white);
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--color-white);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border: 2px solid var(--color-white);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-secondary:hover {
+            background: var(--color-white);
+            color: var(--color-ink);
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DECENCY<br>STANDARD</a>
+            <ul class="nav-links">
+                <li><a href="jdbaa.html">JDBAA</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="roaming.html">The Roaming Introvert</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="now.html">Now</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work With Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">Work With Me</h1>
+        <p class="page-description">
+            Let's collaborate. Or if you need to hire me, that's great too.
+        </p>
+    </div>
+
+    <div class="work-content">
+        <div class="intro-section">
+            <p>
+                I've spent 20+ years inside organizations that were either growing faster than their systems could handle, or operating on infrastructure that made no sense and nobody had ever questioned. Both problems have the same solution: someone who can look at the whole picture, be honest about what's actually broken, and build something that works.
+            </p>
+            <p>
+                That's the work I do.
+            </p>
+        </div>
+
+        <section class="background-section">
+            <p>
+                My background is operations. The kind that spans technology, facilities, HR, finance, and whatever else falls through the cracks when nobody else owns it. I've managed budgets up to $25M, led teams through technology overhauls that people actually adopted, built HR systems from scratch, and kept multi-site operations running in sectors where the margin for error is low and the stakes are real. Nonprofits, schools, early childhood programs, faith-based organizations. Different contexts, same core challenge: make the back end strong enough that the people doing the mission work can actually do it.
+            </p>
+            <p>
+                My consulting practice, Decency Standard, is where I take that same approach and apply it to organizations that need outside eyes and focused expertise rather than a full-time hire. If you're a nonprofit or school that's outgrown your systems, sitting on operational chaos you've normalized, or trying to figure out why things keep breaking the same way, that's my wheelhouse.
+            </p>
+        </section>
+
+        <h2 class="section-heading">What I Actually Do</h2>
+
+        <section class="services-grid">
+            <div class="service-card">
+                <h3>Operations & Systems Work</h3>
+                <p>I assess what's working, what isn't, and what's being held together with duct tape that nobody wants to admit isn't a real system. Then I help you build the real one.</p>
+                <ul>
+                    <li>Process design and workflow mapping</li>
+                    <li>Technology selection and implementation</li>
+                    <li>Getting people to actually use the things you've paid for</li>
+                    <li>The unglamorous work that makes everything else possible</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Interim Executive Leadership</h3>
+                <p>Sometimes an organization needs experienced operational leadership during a transition. A leadership gap, a restructuring, a crisis that revealed the COO position was load-bearing in ways nobody realized.</p>
+                <ul>
+                    <li>Step in during transitions</li>
+                    <li>Move quickly without breaking things further</li>
+                    <li>Stabilize operations while you search for permanent leadership</li>
+                    <li>Bridge gaps that can't wait</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Strategic Planning & Organizational Infrastructure</h3>
+                <p>This is the slower work. Getting leadership aligned, building the kind of internal clarity that means people aren't constantly waiting for decisions or working at cross-purposes.</p>
+                <ul>
+                    <li>Bridge the gap between strategy and operational capacity</li>
+                    <li>Leadership alignment that actually sticks</li>
+                    <li>Build systems that support where you're actually going</li>
+                    <li>Internal clarity that reduces friction</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="executive-section">
+            <h2>Executive Opportunities</h2>
+            <p class="executive-text">
+                I'm also selectively open to full-time executive roles. COO, VP of Operations, Chief of Staff, Director of Technology. With nonprofits, foundations, or mission-driven organizations where the operations function is taken seriously rather than treated as overhead.
+            </p>
+            <p class="executive-text">
+                The right fit looks like: a leadership team that values directness, an organization ready to actually do the work rather than just talk about it, and a role where I can build something that lasts.
+            </p>
+            <div class="experience-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-number">20+</div>
+                    <div class="highlight-label">Years Operations Experience</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">$25M</div>
+                    <div class="highlight-label">Budget Management</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">Multi-Site</div>
+                    <div class="highlight-label">Operations Leadership</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">Houston</div>
+                    <div class="highlight-label">Based, National Work</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="philosophy-section">
+            <h2>How I Work</h2>
+            <p>
+                I'm direct. If I think something is broken, I'll say so, not to be harsh, but because sugarcoating operational problems doesn't fix them. I ask a lot of questions before I start giving answers, because the presenting problem is rarely the actual problem. And I care a lot about the people inside the organizations I work with, because sustainable operational change only happens when the humans are part of the solution.
+            </p>
+            <div class="philosophy-quote">
+                "Functional, decent workplaces are achievable. Not as a nice-to-have, but as a prerequisite for doing good work."
+            </div>
+            <p>
+                That belief shapes everything about how I operate.
+            </p>
+        </div>
+
+        <div class="cta-section">
+            <h2>Let's Talk</h2>
+            <p>
+                If something here resonates, whether you're thinking about a consulting engagement, an executive role, or just want to have a conversation about what operational transformation actually requires, I'm happy to connect.
+            </p>
+            <p class="cta-tagline">
+                Houston-based. Available for national work. Not interested in wasting your time or mine.
+            </p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-primary">Get in Touch</a>
+                <a href="about.html" class="cta-secondary">Learn More About Me</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p class="footer-logo">DECENCY STANDARD</p>
+                    <p class="footer-tagline">Building a personal canon in public</p>
+                </div>
+                <div class="footer-links">
+                    <a href="jdbaa.html">JDBAA</a>
+                    <a href="writing.html">Writing</a>
+                    <a href="roaming.html">The Roaming Introvert</a>
+                    <a href="media.html">Media</a>
+                    <a href="now.html">Now</a>
+                    <a href="about.html">About</a>
+                    <a href="work.html">Work With Me</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Decency Standard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
